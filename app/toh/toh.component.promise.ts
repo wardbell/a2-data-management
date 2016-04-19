@@ -3,8 +3,8 @@ console.log ('Promise version');
 
 import { Component, provide } from 'angular2/core';
 
-import { HeroListComponent } from './hero-list.component.1';
-import { HeroService }       from './hero.service.1';
+import { HeroListComponent } from './hero-list.component.promise';
+import { HeroService }       from './hero.service.promise';
 
 // Http imports
 import { HTTP_PROVIDERS }    from 'angular2/http';
@@ -32,4 +32,4 @@ import { HeroData }          from '../hero-data';
 
   ]
 })
-export class TohComponent { }
+export class TohComponentPromise { }

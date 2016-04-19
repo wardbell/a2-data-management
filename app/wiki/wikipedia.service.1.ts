@@ -10,7 +10,7 @@ export class WikipediaService {
     let wikiUrl = 'http://en.wikipedia.org/w/api.php';
 
     let queryString =
-      `?search=${term}&action=opensearch&format=json&callback=JSONP_CALLBACK`
+      `?search=${term}&action=opensearch&format=json&callback=JSONP_CALLBACK`;
 
     // TODO: Add error handling
     return this.jsonp

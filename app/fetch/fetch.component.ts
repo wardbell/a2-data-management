@@ -4,7 +4,7 @@ import { HeroListComponent } from './hero-list.component';
 import { HeroServiceFetch,
          HeroServiceHttp}    from './hero.service';
 
-// DELETE THIS
+// For the HTTP version
 import { HTTP_PROVIDERS }    from 'angular2/http';
 
 @Component({

@@ -2,7 +2,7 @@
 
 import {Component, OnInit} from 'angular2/core';
 import {Hero}              from './hero';
-import {HeroService}       from './hero.service.1';
+import {HeroService}       from './hero.service.promise';
 
 @Component({
   selector: 'hero-list',
@@ -28,7 +28,7 @@ export class HeroListComponent implements OnInit {
   }
 
   addHero (name: string) {
-    if (!name) {return;}
+    if (!name) {return; }
     this._heroService.addHero(name)
                      .then(
                        hero  => this.heroes.push(hero),

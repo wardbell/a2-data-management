@@ -1,4 +1,3 @@
-
 import {Component}        from 'angular2/core';
 import {JSONP_PROVIDERS}  from 'angular2/http';
 import {Observable}       from 'rxjs/Observable';
@@ -19,7 +18,7 @@ import {WikipediaService} from './wikipedia.service';
       <li *ngFor="#item of items | async">{{item}}</li>
     </ul>
   `,
-  providers:[JSONP_PROVIDERS, WikipediaService]
+  providers: [JSONP_PROVIDERS, WikipediaService]
 })
 export class WikiSmartComponent {
 
@@ -30,7 +29,7 @@ export class WikiSmartComponent {
   items: Observable<string[]> = this._searchTermStream
     .debounceTime(300)
     .distinctUntilChanged()
-    .switchMap((term:string) => this._wikipediaService.search(term));
+    .switchMap((term: string) => this._wikipediaService.search(term));
 
   search(term: string) { this._searchTermStream.next(term); }
 }
