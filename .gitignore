@@ -1,0 +1,13 @@
+app/**/*.js
+**/plnkr*.html
+.editorconfig
+.idea
+.vscode
+typings
+node_modules
+jspm_packages
+*.js.map
+npm-debug*.
+protractor.config.js
+_test-output
+_temp

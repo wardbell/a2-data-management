@@ -1,0 +1,10 @@
+<h3>Heroes via {{service}}:</h3>
+<p>Status: {{status}}</p>
+<p><img [src]='heroImg' alt="hero" height="120"></p>
+<ul>
+  <li *ngFor="#hero of heroes">
+    {{ hero.name }}
+  </li>
+</ul>
+
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
