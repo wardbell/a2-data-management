@@ -4,7 +4,7 @@ import {Observable}       from 'rxjs/Observable';
 
 import {Subject}          from 'rxjs/Subject';
 
-import {WikipediaService} from './wikipedia.service';
+import {WikiSmartService} from './wiki-smart.service';
 
 @Component({
   selector: 'my-wiki-smart',
@@ -18,14 +18,15 @@ import {WikipediaService} from './wikipedia.service';
       <li *ngFor="#item of items | async">{{item}}</li>
     </ul>
   `,
-  providers: [JSONP_PROVIDERS, WikipediaService]
+  providers: [JSONP_PROVIDERS, WikiSmartService]
 })
 export class WikiSmartComponent {
 
-  constructor (private _wikipediaService: WikipediaService) { }
+  constructor (private _wikipediaService: WikiSmartService) { }
 
   private _searchTermStream = new Subject<string>();
 
+  // send the observable directly to the template!
   items: Observable<string[]> = this._searchTermStream
     .debounceTime(300)
     .distinctUntilChanged()

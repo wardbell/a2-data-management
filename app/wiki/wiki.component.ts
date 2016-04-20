@@ -2,7 +2,7 @@ import {Component}        from 'angular2/core';
 import {JSONP_PROVIDERS}  from 'angular2/http';
 import {Observable}       from 'rxjs/Observable';
 
-import {WikipediaService} from './wikipedia.service';
+import {WikiService} from './wiki.service';
 
 @Component({
   selector: 'my-wiki',
@@ -16,15 +16,16 @@ import {WikipediaService} from './wikipedia.service';
       <li *ngFor="#item of items | async">{{item}}</li>
     </ul>
   `,
-  providers: [JSONP_PROVIDERS, WikipediaService]
+  providers: [JSONP_PROVIDERS, WikiService]
 })
 export class WikiComponent {
 
-  constructor (private _wikipediaService: WikipediaService) {}
+  constructor (private _wikipediaService: WikiService) {}
 
   items: Observable<string[]>;
 
   search (term: string) {
+    // send the observable directly to the template!
     this.items = this._wikipediaService.search(term);
   }
 }
