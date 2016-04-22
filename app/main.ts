@@ -10,11 +10,13 @@ import { WikiComponent }      from './wiki/wiki.component';
 import { WikiSmartComponent } from './wiki/wiki-smart.component';
 import { TohComponent }       from './toh/toh.component';
 
+import { TohComponentAsyncPipe }   from './toh/toh.component.async-pipe';
 import { TohComponentPromise }     from './toh/toh.component.promise';
 import { TohComponentInterceptor } from './toh/toh.component.interceptor';
 
 
 bootstrap(TohComponent, [HTTP_PROVIDERS]);
+// bootstrap(TohComponentAsyncPipe, [HTTP_PROVIDERS]);
 // bootstrap(TohComponentPromise, [HTTP_PROVIDERS]);
 // bootstrap(TohComponentInterceptor, [HTTP_PROVIDERS]);
 

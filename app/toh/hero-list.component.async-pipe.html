@@ -1,0 +1,7 @@
+<h3>Http Async Pipe Heroes:</h3>
+<ul>
+  <li *ngFor="#hero of heroes | async">
+    {{ hero.name }}
+  </li>
+</ul>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
